@@ -19,10 +19,14 @@ function App() {
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? 'glass' : ''}`}>
         <div className="container nav-container">
-          <a href="#" className="nav-logo">&lt;Eleil /&gt;</a>
+          <a href="#" className="nav-logo" title="Inicio">
+            <div className="nav-profile-img"></div>
+          </a>
           <div className="nav-links">
             <a href="#home" className="nav-link">Inicio</a>
             <a href="#about" className="nav-link">Sobre mí</a>
+            <a href="#skills" className="nav-link">Conocimientos</a>
+            <a href="#experience" className="nav-link">Experiencia</a>
             <a href="#projects" className="nav-link">Proyectos</a>
             <a href="#contact" className="nav-link">Contacto</a>
           </div>
@@ -35,10 +39,10 @@ function App() {
           <div className="hero-overlay"></div>
           <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
             <div className="fade-up">
-              <h2 style={{ color: 'var(--accent)', marginBottom: '1rem', fontSize: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px' }}>Bienvenido</h2>
-              <h1>ELEIL UCHPA</h1>
-              <p className="delay-1 fade-up" style={{ fontSize: '1.5rem', marginBottom: '2.5rem', color: '#fff' }}>
-                Soy desarrollador web...
+              <h2 style={{ color: 'var(--accent)', marginBottom: '1rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px' }}>Hola, soy</h2>
+              <h1 style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)', lineHeight: '1.1' }}>ELEIL UCHPA</h1>
+              <p className="delay-1 fade-up" style={{ fontSize: '1.4rem', marginBottom: '2.5rem', color: '#e2e8f0', maxWidth: '800px', margin: '0 auto 2.5rem auto' }}>
+                Desarrollador Web Full Stack apasionado por construir aplicaciones modernas, eficientes y con un diseño impecable.
               </p>
               <div className="delay-2 fade-up" style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
                 <a href="#about" className="btn btn-primary">Conóceme más</a>
@@ -111,6 +115,144 @@ function App() {
               <p style={{ marginTop: '2.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
                 Siempre busco trabajar con personas que son idealistas como yo, y que están interesadas en crear y trabajar en proyectos geniales, interesantes y significativos. Envíame un <a href="#contact" style={{ color: 'var(--accent)', textDecoration: 'none' }}>mensaje</a> si eso suena como una taza de café.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Conocimientos Section */}
+        <section id="skills" className="container skills-section">
+          <h2 className="fade-up" style={{ marginBottom: '3rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Conocimientos</h2>
+
+          <div className="skills-grid">
+            {/* Backend */}
+            <div className="skill-category fade-up delay-1">
+              <h4 className="skill-title">BACKEND DEVELOPER:</h4>
+              <div className="skill-badges">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" className="skill-badge-img" />
+                {/* Usando '#43853d' para un verde más claro, o usando estilo claro con logo original */}
+                <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" className="skill-badge-img" />
+              </div>
+            </div>
+
+            {/* Deploy */}
+            <div className="skill-category fade-up delay-2">
+              <h4 className="skill-title">DEPLOY:</h4>
+              <div className="skill-badges">
+                <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=orange" alt="AWS" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" className="skill-badge-img" />
+                {/* GitHub contrast: Fondo blanco, texto y logo negro */}
+                <img src="https://img.shields.io/badge/GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" className="skill-badge-img" />
+              </div>
+            </div>
+
+            {/* Frontend */}
+            <div className="skill-category fade-up delay-1">
+              <h4 className="skill-title">FRONTEND DEVELOPER:</h4>
+              <div className="skill-badges">
+                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" className="skill-badge-img" />
+                {/* React force bright blue color block instead of dark grey */}
+                <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" className="skill-badge-img" />
+              </div>
+            </div>
+
+            {/* QA Automation (as in your example image) */}
+            {/* This section was removed as per instructions */}
+
+            {/* Database */}
+            <div className="skill-category fade-up delay-1">
+              <h4 className="skill-title">DATABASE:</h4>
+              <div className="skill-badges">
+                <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" className="skill-badge-img" />
+              </div>
+            </div>
+
+            {/* Editors */}
+            <div className="skill-category fade-up delay-2">
+              <h4 className="skill-title">EDITORS:</h4>
+              <div className="skill-badges">
+                <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code" className="skill-badge-img" />
+                <img src="https://img.shields.io/badge/Sublime_Text-FF9800?style=for-the-badge&logo=sublime-text&logoColor=white" alt="Sublime Text" className="skill-badge-img" />
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Experiencia Section */}
+        <section id="experience" className="experience-section">
+          <div className="experience-overlay"></div>
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <h2 className="fade-up" style={{ marginBottom: '4rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Experiencia</h2>
+
+            <div className="experience-grid">
+
+              {/* Columna Educación */}
+              <div className="timeline-column fade-up delay-1">
+                <h3 className="timeline-header">Educación</h3>
+                <div className="timeline">
+
+                  {/* Item Educación 1 */}
+                  <div className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content glass">
+                      <h4>Desarrollo web full stack</h4>
+                      <div className="timeline-date">2025 - 2025</div>
+                      <a href="https://codigo.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>BOOTCAMP / INSTITUTO</a>
+                      <p>Formación intensiva en tecnologías modernas de desarrollo web, abarcando tanto el Front-end como el Back-end para la creación de aplicaciones completas.</p>
+                    </div>
+                  </div>
+
+                  {/* Item Educación 2 */}
+                  <div className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content glass">
+                      <h4>Ingeniería en Sistemas</h4>
+                      <div className="timeline-date">2020 - 2025</div>
+                      <a href="https://www.upn.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>UNIVERSIDAD</a>
+                      <p>Formación profesional enfocada en el diseño, desarrollo y gestión de sistemas de información, bases de datos y arquitecturas de software orientadas a resolver problemas complejos.</p>
+                    </div>
+                  </div>
+
+                  {/* Item Educación 3 */}
+                  <div className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content glass">
+                      <h4>Estudios Técnicos</h4>
+                      <div className="timeline-date">2017 - 2019</div>
+                      <a href="https://www.cibertec.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>CIBERTEC</a>
+                      <p>Bases fundamentales en computación, redes e informática que cimentaron mi pasión por el desarrollo de software y la tecnología computacional.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Columna Experiencia Profesional */}
+              <div className="timeline-column fade-up delay-2">
+                <h3 className="timeline-header">Experiencia Profesional</h3>
+                <div className="timeline">
+
+                  {/* Item Trabajo 1 */}
+                  <div className="timeline-item">
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-content glass">
+                      <h4>Desarrollador Web Freelance / Contratista</h4>
+                      <div className="timeline-date">Reciente</div>
+                      <a href="https://nus-lab.github.io/soluciones-informaticas/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>SOLUCIONES INFORMATICAS NUS</a>
+                      <p>Encargado de diseñar, desarrollar e implementar desde cero la página web institucional de la empresa. Responsable completo del ciclo de vida del proyecto web, asegurando un diseño responsivo, moderno y altamente funcional.</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
