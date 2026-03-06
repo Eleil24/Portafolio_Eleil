@@ -66,7 +66,8 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* Typography styles */
@@ -100,10 +101,10 @@ p {
 /* Sections */
 section {
   padding: 6rem 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  scroll-margin-top: 80px;
 }
 
 /* Buttons */
@@ -144,12 +145,57 @@ section {
 
 /* Cards */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  overflow-x: auto;
   gap: 2rem;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar for project grid */
+.project-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:active,
+.carousel-arrow:focus {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-50%) !important;
+}
+
+.left-arrow {
+  left: -4rem;
+}
+
+.right-arrow {
+  right: -4rem;
 }
 
 .project-card {
+  flex: 0 0 calc(45% - 1rem);
+  min-width: 320px;
+  max-width: 85vw;
+  scroll-snap-align: start;
   border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -301,7 +347,7 @@ section {
 }
 
 .about-section {
-  padding-top: 6rem;
+  padding-top: 2rem;
 }
 
 .about-grid {
@@ -360,7 +406,7 @@ section {
 
 /* --- Conocimientos --- */
 .skills-section {
-  padding-top: 6rem;
+  padding-top: 2rem;
 }
 
 .skills-grid {
@@ -433,8 +479,7 @@ section {
 /* --- Experiencia --- */
 .experience-section {
   position: relative;
-  min-height: 100vh;
-  padding: 6rem 0;
+  padding: 2rem 0 6rem 0;
   /* Fondo estilo paisaje o degradado cálido, como en el ejemplo */
   background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop');
   background-size: cover;

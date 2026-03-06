@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, User, Monitor, Smartphone, MapPin, CheckCircle } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, User, Monitor, Smartphone, MapPin, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const projectsRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +12,13 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollProjects = (direction) => {
+    if (projectsRef.current) {
+      const scrollAmount = projectsRef.current.clientWidth / 2 + 32;
+      projectsRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -258,75 +266,147 @@ function App() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="container">
-          <h2 className="fade-up" style={{ textAlign: 'center' }}>Proyectos Destacados</h2>
+        <section id="projects" className="container" style={{ paddingTop: '2rem' }}>
+          <div className="fade-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+            <h2 style={{ margin: 0, borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.2rem' }}>Proyectos Destacados</h2>
+          </div>
 
-          <div className="project-grid">
-            {/* Project 1 */}
-            <div className="project-card glass fade-up delay-1">
-              <div className="project-img-wrapper">
-                {/* Placeholder gradient matching theme */}
-                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #1e1b4b, #6366f1)', opacity: 0.8 }}></div>
-              </div>
-              <div className="project-content">
-                <h3 style={{ marginBottom: '0.5rem' }}>E-commerce Premium</h3>
-                <p>Plataforma de comercio electrónico con carrito de compras en tiempo real y panel de administración.</p>
-                <div className="project-tech">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">Vite</span>
-                  <span className="tech-tag">Tailwind</span>
-                </div>
-                <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                  <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                    <Github size={16} /> Código
-                  </a>
-                  <a href="#" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                    <ExternalLink size={16} /> Visitar
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div style={{ position: 'relative' }}>
+            {/* Botón Izquierda */}
+            <button
+              onClick={() => scrollProjects('left')}
+              className="btn btn-outline glass carousel-arrow left-arrow"
+              aria-label="Anterior proyecto"
+            >
+              <ChevronLeft size={28} />
+            </button>
 
-            {/* Project 2 */}
-            <div className="project-card glass fade-up delay-2">
-              <div className="project-img-wrapper">
-                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #0f172a, #38bdf8)', opacity: 0.8 }}></div>
-              </div>
-              <div className="project-content">
-                <h3 style={{ marginBottom: '0.5rem' }}>Sistema de Gestión</h3>
-                <p>Dashboard administrativo para control de inventario y gestión de usuarios con roles.</p>
-                <div className="project-tech">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">Node.js</span>
-                  <span className="tech-tag">Prisma</span>
-                </div>
-                <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                  <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                    <Github size={16} /> Código
-                  </a>
-                </div>
-              </div>
-            </div>
+            {/* Botón Derecha */}
+            <button
+              onClick={() => scrollProjects('right')}
+              className="btn btn-outline glass carousel-arrow right-arrow"
+              aria-label="Siguiente proyecto"
+            >
+              <ChevronRight size={28} />
+            </button>
 
-            {/* Project 3 */}
-            <div className="project-card glass fade-up delay-2">
-              <div className="project-img-wrapper">
-                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #312e81, #c084fc)', opacity: 0.8 }}></div>
-              </div>
-              <div className="project-content">
-                <h3 style={{ marginBottom: '0.5rem' }}>App de Tareas Pro</h3>
-                <p>Aplicación de productividad con arrastrar y soltar, temas personalizados y modo oscuro.</p>
-                <div className="project-tech">
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">CSS Modules</span>
+            <div className="project-grid" ref={projectsRef}>
+              {/* Project 1 */}
+              <div className="project-card glass fade-up delay-1">
+                <div className="project-img-wrapper">
+                  <img src="/Portafolio_Eleil/calificacion_peliculas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                  <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                    <Github size={16} /> Código
-                  </a>
-                  <a href="#" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                    <ExternalLink size={16} /> Visitar
-                  </a>
+                <div className="project-content">
+                  <h3 style={{ marginBottom: '0.5rem' }}>Registro de calificación y registro de peliculas</h3>
+                  <p>Plataforma donde los usuarios pueden calificar películas y los administradores pueden gestionar las películas, usuarios y calificaciones.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">React</span>
+                    <span className="tech-tag">Vite</span>
+                    <span className="tech-tag">Tailwind</span>
+                    <span className="tech-tag">Spring Boot</span>
+                    <span className="tech-tag">PostgreSQL</span>
+                    <span className="tech-tag">JWT</span>
+                    <span className="tech-tag">Swagger</span>
+                  </div>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {/* Botón Front */}
+                    <a href="https://github.com/Eleil24/Proyect_movie_crud" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Github size={16} /> Front
+                    </a>
+                    {/* Botón Back */}
+                    <a href="https://github.com/eleil-uchpa/Peliculas_Backend_Up" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Github size={16} /> Back
+                    </a>
+                    {/* Botón API (Render) */}
+                    <a href="https://peliculas-backend-up.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Monitor size={16} /> API Server
+                    </a>
+                    {/* Botón Visitar */}
+                    <a href="https://proyect-movie-crud.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                      <ExternalLink size={16} /> Visitar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="project-card glass fade-up delay-2">
+                <div className="project-img-wrapper">
+                  <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #0f172a, #38bdf8)', opacity: 0.8 }}></div>
+                </div>
+                <div className="project-content">
+                  <h3 style={{ marginBottom: '0.5rem' }}>Sistema de Gestión</h3>
+                  <p>Dashboard administrativo para control de inventario y gestión de usuarios con roles.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">React</span>
+                    <span className="tech-tag">Node.js</span>
+                    <span className="tech-tag">Prisma</span>
+                  </div>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
+                    <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                      <Github size={16} /> Código
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 3 */}
+              <div className="project-card glass fade-up delay-2">
+                <div className="project-img-wrapper">
+                  <img src="/Portafolio_Eleil/gestor_de_tareas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div className="project-content">
+                  <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Tareas</h3>
+                  <p>Aplicación de productividad con el fin de gestionar tareas diarias.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">React</span>
+                    <span className="tech-tag">Vite</span>
+                    <span className="tech-tag">Spring Boot</span>
+                    <span className="tech-tag">PostgreSQL</span>
+                    <span className="tech-tag">Tailwind</span>
+                  </div>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {/* Botón Front */}
+                    <a href="https://github.com/Eleil24/Gestor_de_Tareas_Front_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Github size={16} /> Front
+                    </a>
+                    {/* Botón Back */}
+                    <a href="https://github.com/Eleil24/gestor-tareas-backend_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Github size={16} /> Back
+                    </a>
+                    {/* Botón API (Render) */}
+                    <a href="https://gestor-tareas-backend-levantar.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Monitor size={16} /> API Server
+                    </a>
+                    {/* Botón Visitar */}
+                    <a href="https://gestor-de-tareas-front-levantar.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                      <ExternalLink size={16} /> Visitar
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 4 */}
+              <div className="project-card glass fade-up delay-2">
+                <div className="project-img-wrapper">
+                  <img src="/Portafolio_Eleil/gestor_de_comandas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div className="project-content">
+                  <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Comandas</h3>
+                  <p>Aplicación de gestión de comandas para restaurantes.</p>
+                  <div className="project-tech">
+                    <span className="tech-tag">React</span>
+                    <span className="tech-tag">Bootstrap</span>
+                    <span className="tech-tag">Moockito</span>
+                  </div>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <a href="https://github.com/Eleil24/Sistema-de-comandas" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                      <Github size={16} /> Código
+                    </a>
+                    <a href="https://eleil24.github.io/Sistema-de-comandas/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                      <ExternalLink size={16} /> Visitar
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
