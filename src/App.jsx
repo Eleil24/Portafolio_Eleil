@@ -85,7 +85,7 @@ function App() {
                 <div className="info-item">
                   <User className="info-icon" />
                   <div>
-                    <strong style={{ display: 'block' }}>Nombre:</strong> <span style={{ color: 'var(--text-secondary)' }}>Eleil Uchpa</span>
+                    <strong style={{ display: 'block' }}>Nombre:</strong> <span style={{ color: 'var(--text-secondary)' }}>Eleil Uchpa Mayuntupa</span>
                   </div>
                 </div>
                 <div className="info-item">
@@ -97,13 +97,13 @@ function App() {
                 <div className="info-item">
                   <Smartphone className="info-icon" />
                   <div>
-                    <strong style={{ display: 'block' }}>Celular:</strong> <span style={{ color: 'var(--text-secondary)' }}>+51 999 999 999</span>
+                    <strong style={{ display: 'block' }}>Celular:</strong> <span style={{ color: 'var(--text-secondary)' }}>+51 927 712 406</span>
                   </div>
                 </div>
                 <div className="info-item">
                   <Mail className="info-icon" />
                   <div>
-                    <strong style={{ display: 'block' }}>Correo:</strong> <span style={{ color: 'var(--text-secondary)' }}>eleil@ejemplo.com</span>
+                    <strong style={{ display: 'block' }}>Correo:</strong> <span style={{ color: 'var(--text-secondary)' }}>eleil.uchpam@gmail.com</span>
                   </div>
                 </div>
                 <div className="info-item">
@@ -414,21 +414,21 @@ function App() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="container" style={{ textAlign: 'center', minHeight: '60vh' }}>
-          <div className="glass fade-up" style={{ padding: '4rem 2rem', borderRadius: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <section id="contact" className="container" style={{ textAlign: 'center', minHeight: '40vh', padding: '2rem 0' }}>
+          <div className="glass fade-up" style={{ padding: '2rem 2rem', borderRadius: '2rem', maxWidth: '800px', margin: '0 auto' }}>
             <h2>¿Trabajamos juntos?</h2>
             <p style={{ marginBottom: '2rem' }}>
               Actualmente estoy abierto a nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres saludar, mi bandeja de entrada siempre está abierta.
             </p>
-            <a href="mailto:hola@ejemplo.com" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
+            <a href="mailto:eleil.uchpam@gmail.com" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
               <Mail size={20} /> Enviar Mensaje
             </a>
 
             <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-              <a href="https://github.com/Eleil" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+              <a href="https://github.com/Eleil24" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                 <Github size={28} />
               </a>
-              <a href="https://linkedin.com/in/eleil" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+              <a href="https://www.linkedin.com/in/eleil-azarias-uchpa-mayuntupa-28b896181" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
                 <Linkedin size={28} />
               </a>
             </div>
@@ -437,7 +437,7 @@ function App() {
       </main>
 
       <footer style={{ textAlign: 'center', padding: '2rem', borderTop: '1px solid var(--glass-border)', color: 'var(--text-secondary)' }}>
-        <p>© {new Date().getFullYear()} Eleil. Diseñado y construido con React.</p>
+        <p>© {new Date().getFullYear()} Eleil Uchpa Mayuntupa.</p>
       </footer>
     </>
   );
