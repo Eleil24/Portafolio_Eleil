@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, User, Monitor, Smartphone, MapPin, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, User, Monitor, Smartphone, MapPin, CheckCircle, ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const projectsRef = useRef(null);
 
   useEffect(() => {
@@ -30,13 +31,18 @@ function App() {
           <a href="#" className="nav-logo" title="Inicio">
             <div className="nav-profile-img"></div>
           </a>
-          <div className="nav-links">
-            <a href="#home" className="nav-link">Inicio</a>
-            <a href="#about" className="nav-link">Sobre mí</a>
-            <a href="#skills" className="nav-link">Conocimientos</a>
-            <a href="#experience" className="nav-link">Experiencia</a>
-            <a href="#projects" className="nav-link">Proyectos</a>
-            <a href="#contact" className="nav-link">Contacto</a>
+          
+          <button className="menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+            <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</a>
+            <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Sobre mí</a>
+            <a href="#skills" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Conocimientos</a>
+            <a href="#experience" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Experiencia</a>
+            <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Proyectos</a>
+            <a href="#contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contacto</a>
           </div>
         </div>
       </nav>
@@ -298,7 +304,7 @@ function App() {
         {/* Projects Section */}
         <section id="projects" className="projects-section">
           <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '0.5rem' }}>
-            <div className="fade-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+            <div className="fade-up" style={{ marginBottom: '3rem', textAlign: 'left' }}>
               <h2 style={{ margin: 0, borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.2rem' }}>Proyectos Destacados</h2>
             </div>
 
