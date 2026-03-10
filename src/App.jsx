@@ -54,8 +54,8 @@ function App() {
           <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
             <div className="fade-up">
               <h2 style={{ color: 'var(--accent)', marginBottom: '1rem', fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '3px' }}>Hola, soy</h2>
-              <h1 style={{ fontSize: 'clamp(3.5rem, 10vw, 6rem)', lineHeight: '1.1' }}>ELEIL UCHPA</h1>
-              <p className="delay-1 fade-up" style={{ fontSize: '1.4rem', marginBottom: '2.5rem', color: '#e2e8f0', maxWidth: '800px', margin: '0 auto 2.5rem auto' }}>
+              <h1 style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)', lineHeight: '1.1' }}>ELEIL UCHPA</h1>
+              <p className="delay-1 fade-up" style={{ fontSize: '1.1rem', marginBottom: '2.5rem', color: '#e2e8f0', maxWidth: '700px', margin: '0 auto 2rem auto' }}>
                 Desarrollador Web Full Stack apasionado por construir aplicaciones modernas, eficientes y con un diseño impecable.
               </p>
               <div className="delay-2 fade-up" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
