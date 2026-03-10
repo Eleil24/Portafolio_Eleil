@@ -52,21 +52,21 @@ function App() {
               <p className="delay-1 fade-up" style={{ fontSize: '1.4rem', marginBottom: '2.5rem', color: '#e2e8f0', maxWidth: '800px', margin: '0 auto 2.5rem auto' }}>
                 Desarrollador Web Full Stack apasionado por construir aplicaciones modernas, eficientes y con un diseño impecable.
               </p>
-              <div className="delay-2 fade-up" style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                <a href="#about" className="btn btn-primary">Conóceme más</a>
+              <div className="delay-2 fade-up" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <a href="#about" className="btn btn-outline glass" style={{ padding: '0.8rem 1.5rem', borderRadius: '9999px', textDecoration: 'none' }}>Conóceme más</a>
                 <a href="#projects" className="btn btn-outline glass" style={{ padding: '0.8rem 1.5rem', borderRadius: '9999px', textDecoration: 'none' }}>Ver proyectos</a>
               </div>
             </div>
 
-            <div style={{ position: 'absolute', bottom: '-8rem', left: '50%', transform: 'translateX(-50%)', animation: 'bounce 2s infinite' }}>
+            <a href="#about" style={{ position: 'absolute', bottom: '-8rem', left: '50%', transform: 'translateX(-50%)', animation: 'bounce 2s infinite', cursor: 'pointer', zIndex: 10 }}>
               <ChevronDown size={32} color="white" />
-            </div>
+            </a>
           </div>
         </section>
 
         {/* Sobre Mí Section */}
         <section id="about" className="container about-section">
-          <h2 className="fade-up" style={{ marginBottom: '3rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Sobre mí</h2>
+          <h2 className="fade-up" style={{ marginBottom: '1rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Sobre mí</h2>
 
           <div className="about-grid">
             <div className="about-image-wrapper fade-up delay-1">
@@ -123,73 +123,89 @@ function App() {
               <p style={{ marginTop: '2.5rem', fontSize: '0.95rem', color: 'var(--text-secondary)' }}>
                 Siempre busco trabajar con personas que son idealistas como yo, y que están interesadas en crear y trabajar en proyectos geniales, interesantes y significativos. Envíame un <a href="#contact" style={{ color: 'var(--accent)', textDecoration: 'none' }}>mensaje</a> si eso suena como una taza de café.
               </p>
+
+              <div style={{ marginTop: '2rem' }}>
+                <a
+                  href="/Portafolio_Eleil/docs/Uchpa Eleil 2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline glass"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.8rem 1.5rem' }}
+                >
+                  Descargar Curriculum
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Conocimientos Section */}
-        <section id="skills" className="container skills-section">
-          <h2 className="fade-up" style={{ marginBottom: '3rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Conocimientos</h2>
+        <section id="skills" className="skills-section">
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <h2 className="fade-up" style={{ marginBottom: '1rem', borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.5rem' }}>Conocimientos</h2>
 
-          <div className="skills-grid">
-            {/* Backend */}
-            <div className="skill-category fade-up delay-1">
-              <h4 className="skill-title">BACKEND DEVELOPER:</h4>
-              <div className="skill-badges">
-                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" className="skill-badge-img" />
-                {/* Usando '#43853d' para un verde más claro, o usando estilo claro con logo original */}
-                <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" className="skill-badge-img" />
+            <div className="skills-grid">
+              {/* Backend */}
+              <div className="skill-category fade-up delay-1">
+                <h4 className="skill-title">BACKEND DEVELOPER:</h4>
+                <div className="skill-badges">
+                  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" alt="Spring Boot" className="skill-badge-img" />
+                  {/* Usando '#43853d' para un verde más claro, o usando estilo claro con logo original */}
+                  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" className="skill-badge-img" />
+                </div>
               </div>
-            </div>
 
-            {/* Deploy */}
-            <div className="skill-category fade-up delay-2">
-              <h4 className="skill-title">DEPLOY:</h4>
-              <div className="skill-badges">
-                <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=orange" alt="AWS" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" className="skill-badge-img" />
-                {/* GitHub contrast: Fondo blanco, texto y logo negro */}
-                <img src="https://img.shields.io/badge/GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" className="skill-badge-img" />
+              {/* Deploy */}
+              <div className="skill-category fade-up delay-2">
+                <h4 className="skill-title">DEPLOY:</h4>
+                <div className="skill-badges">
+                  <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=orange" alt="AWS" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" alt="Render" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/GitHub-FFFFFF?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" className="skill-badge-img" />
+                </div>
               </div>
-            </div>
 
-            {/* Frontend */}
-            <div className="skill-category fade-up delay-1">
-              <h4 className="skill-title">FRONTEND DEVELOPER:</h4>
-              <div className="skill-badges">
-                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" className="skill-badge-img" />
-                {/* React force bright blue color block instead of dark grey */}
-                <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" className="skill-badge-img" />
+              {/* Frontend */}
+              <div className="skill-category fade-up delay-1">
+                <h4 className="skill-title">FRONTEND DEVELOPER:</h4>
+                <div className="skill-badges">
+                  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" className="skill-badge-img" />
+                  {/* React force bright blue color block instead of dark grey */}
+                  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" className="skill-badge-img" />
+                </div>
               </div>
-            </div>
 
-            {/* QA Automation (as in your example image) */}
-            {/* This section was removed as per instructions */}
+              {/* QA Automation (as in your example image) */}
+              {/* This section was removed as per instructions */}
 
-            {/* Database */}
-            <div className="skill-category fade-up delay-1">
-              <h4 className="skill-title">DATABASE:</h4>
-              <div className="skill-badges">
-                <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" className="skill-badge-img" />
+              {/* Database */}
+              <div className="skill-category fade-up delay-1">
+                <h4 className="skill-title">DATABASE:</h4>
+                <div className="skill-badges">
+                  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="SQL Server" className="skill-badge-img" />
+                </div>
               </div>
-            </div>
 
-            {/* Editors */}
-            <div className="skill-category fade-up delay-2">
-              <h4 className="skill-title">EDITORS:</h4>
-              <div className="skill-badges">
-                <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code" className="skill-badge-img" />
-                <img src="https://img.shields.io/badge/Sublime_Text-FF9800?style=for-the-badge&logo=sublime-text&logoColor=white" alt="Sublime Text" className="skill-badge-img" />
+              {/* Editors */}
+              <div className="skill-category fade-up delay-2">
+                <h4 className="skill-title">EDITORS:</h4>
+                <div className="skill-badges">
+                  <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" alt="VS Code" className="skill-badge-img" />
+                  <img src="https://img.shields.io/badge/Sublime_Text-FF9800?style=for-the-badge&logo=sublime-text&logoColor=white" alt="Sublime Text" className="skill-badge-img" />
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </section>
 
@@ -210,7 +226,7 @@ function App() {
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
                     <div className="timeline-content glass">
-                      <h4>Desarrollo web full stack</h4>
+                      <h4>Desarrollo web Fullstack con Java</h4>
                       <div className="timeline-date">2025 - 2025</div>
                       <a href="https://codigo.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>BOOTCAMP / INSTITUTO</a>
                       <p>Formación intensiva en tecnologías modernas de desarrollo web, abarcando tanto el Front-end como el Back-end para la creación de aplicaciones completas.</p>
@@ -221,8 +237,8 @@ function App() {
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
                     <div className="timeline-content glass">
-                      <h4>Ingeniería en Sistemas</h4>
-                      <div className="timeline-date">2020 - 2025</div>
+                      <h4>Ingeniería en Sistemas Computacionales</h4>
+                      <div className="timeline-date">2019 - 2024</div>
                       <a href="https://www.upn.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>UNIVERSIDAD</a>
                       <p>Formación profesional enfocada en el diseño, desarrollo y gestión de sistemas de información, bases de datos y arquitecturas de software orientadas a resolver problemas complejos.</p>
                     </div>
@@ -232,10 +248,10 @@ function App() {
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
                     <div className="timeline-content glass">
-                      <h4>Estudios Técnicos</h4>
-                      <div className="timeline-date">2017 - 2019</div>
+                      <h4>Administración de Redes y Comunicaciones</h4>
+                      <div className="timeline-date">2016 - 2018</div>
                       <a href="https://www.cibertec.edu.pe/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>CIBERTEC</a>
-                      <p>Bases fundamentales en computación, redes e informática que cimentaron mi pasión por el desarrollo de software y la tecnología computacional.</p>
+                      <p>Formación profesional enfocada en el diseño, implementación y gestión de infraestructuras de red y sistemas de comunicación.</p>
                     </div>
                   </div>
 
@@ -251,10 +267,24 @@ function App() {
                   <div className="timeline-item">
                     <div className="timeline-dot"></div>
                     <div className="timeline-content glass">
-                      <h4>Desarrollador Web Freelance / Contratista</h4>
-                      <div className="timeline-date">Reciente</div>
+                      <h4>Analista programador</h4>
+                      <div className="timeline-date">2024 - 2026</div>
                       <a href="https://nus-lab.github.io/soluciones-informaticas/" target="_blank" rel="noopener noreferrer" className="timeline-institution" style={{ display: 'inline-block', textDecoration: 'none' }}>SOLUCIONES INFORMATICAS NUS</a>
-                      <p>Encargado de diseñar, desarrollar e implementar desde cero la página web institucional de la empresa. Responsable completo del ciclo de vida del proyecto web, asegurando un diseño responsivo, moderno y altamente funcional.</p>
+                      <p>
+                        Encargado de diseñar, desarrollar e implementar desde cero la página web institucional de la empresa. Responsable completo del ciclo de vida del proyecto web, asegurando un diseño responsivo, moderno y altamente funcional.
+                      </p>
+                      <p style={{ marginTop: '0.8rem' }}>
+                        Me encargué de automatizar procesos desarrollando sistemas por medio del lenguaje VBA (Visual Studio para Aplicaciones) como sistemas Generadores de Reportes o Guardar datos de las diferentes maquinas que hay en la empresa SINEA para realizar un Certificado de Calidad que se lo lleva el cliente. Otras de mis funciones es la instalación del sistema para cada computadora y los Testing respectivos, además el manejo de base de datos Access.
+                      </p>
+                      <p style={{ marginTop: '0.8rem' }}>
+                        Se desarrolló un sistema de pagos masivos del banco BCP para los proveedores de la empresa BERICAP, utilizando VBA y basado en una guía técnica proporcionada por la entidad financiera.
+                      </p>
+                      <p style={{ marginTop: '0.8rem' }}>
+                        Se llevo a cabo la migración de código VBA hacia una solución basada en Electron, utilizando JavaScript como lenguaje principal. Este proceso busca modernizar y optimizar nuestras herramientas, mejorando su rendimiento, escalabilidad y facilidad de mantenimiento, al mismo tiempo que nos alineamos con tecnologías más flexibles y robustas para el desarrollo de aplicaciones multiplataforma.
+                      </p>
+                      <p style={{ marginTop: '0.8rem' }}>
+                        En paralelo se realizaron pruebas y análisis de costos para migrar la base de datos Access de SINEA a soluciones en la nube como Azure SQL, SharePoint Online y AWS (MySQL/RDS). Se evaluaron aspectos como escalabilidad, integración con sistemas existentes, seguridad y costos operativos.
+                      </p>
                     </div>
                   </div>
 
@@ -266,146 +296,162 @@ function App() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="container" style={{ paddingTop: '2rem' }}>
-          <div className="fade-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
-            <h2 style={{ margin: 0, borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.2rem' }}>Proyectos Destacados</h2>
-          </div>
+        <section id="projects" className="projects-section">
+          <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '0.5rem' }}>
+            <div className="fade-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+              <h2 style={{ margin: 0, borderBottom: '3px solid var(--accent)', display: 'inline-block', paddingBottom: '0.2rem' }}>Proyectos Destacados</h2>
+            </div>
 
-          <div style={{ position: 'relative' }}>
-            {/* Botón Izquierda */}
-            <button
-              onClick={() => scrollProjects('left')}
-              className="btn btn-outline glass carousel-arrow left-arrow"
-              aria-label="Anterior proyecto"
-            >
-              <ChevronLeft size={28} />
-            </button>
+            <div style={{ position: 'relative' }}>
+              {/* Botón Izquierda */}
+              <button
+                onClick={() => scrollProjects('left')}
+                className="btn btn-outline glass carousel-arrow left-arrow"
+                aria-label="Anterior proyecto"
+              >
+                <ChevronLeft size={28} />
+              </button>
 
-            {/* Botón Derecha */}
-            <button
-              onClick={() => scrollProjects('right')}
-              className="btn btn-outline glass carousel-arrow right-arrow"
-              aria-label="Siguiente proyecto"
-            >
-              <ChevronRight size={28} />
-            </button>
+              {/* Botón Derecha */}
+              <button
+                onClick={() => scrollProjects('right')}
+                className="btn btn-outline glass carousel-arrow right-arrow"
+                aria-label="Siguiente proyecto"
+              >
+                <ChevronRight size={28} />
+              </button>
 
-            <div className="project-grid" ref={projectsRef}>
-              {/* Project 1 */}
-              <div className="project-card glass fade-up delay-1">
-                <div className="project-img-wrapper">
-                  <img src="/Portafolio_Eleil/calificacion_peliculas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div className="project-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}>Registro de calificación y registro de peliculas</h3>
-                  <p>Plataforma donde los usuarios pueden calificar películas y los administradores pueden gestionar las películas, usuarios y calificaciones.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">React</span>
-                    <span className="tech-tag">Vite</span>
-                    <span className="tech-tag">Tailwind</span>
-                    <span className="tech-tag">Spring Boot</span>
-                    <span className="tech-tag">PostgreSQL</span>
-                    <span className="tech-tag">JWT</span>
-                    <span className="tech-tag">Swagger</span>
+              <div className="project-grid" ref={projectsRef}>
+                {/* Project 1 */}
+                <div className="project-card glass fade-up delay-1">
+                  <div className="project-img-wrapper">
+                    <img src="/Portafolio_Eleil/projects/calificacion_peliculas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    {/* Botón Front */}
-                    <a href="https://github.com/Eleil24/Proyect_movie_crud" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Github size={16} /> Front
-                    </a>
-                    {/* Botón Back */}
-                    <a href="https://github.com/eleil-uchpa/Peliculas_Backend_Up" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Github size={16} /> Back
-                    </a>
-                    {/* Botón API (Render) */}
-                    <a href="https://peliculas-backend-up.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Monitor size={16} /> API Server
-                    </a>
-                    {/* Botón Visitar */}
-                    <a href="https://proyect-movie-crud.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
-                      <ExternalLink size={16} /> Visitar
-                    </a>
+                  <div className="project-content">
+                    <h3 style={{ marginBottom: '0.5rem' }}>Plataforma de Calificación de Películas</h3>
+                    <p>Aplicación web Full Stack para la exploración y evaluación de películas. Diseñada con una arquitectura cliente-servidor, permite a los usuarios interactuar con un catálogo dinámico y dejar sus críticas. Incluye un panel administrativo para la gestión completa del contenido, usuarios y reseñas, garantizando la seguridad de los endpoints mediante autenticación con JWT y documentada de forma interactiva con Swagger.</p>
+                    <div className="project-tech">
+                      <span className="tech-tag">React</span>
+                      <span className="tech-tag">Vite</span>
+                      <span className="tech-tag">Tailwind</span>
+                      <span className="tech-tag">Spring Boot</span>
+                      <span className="tech-tag">PostgreSQL</span>
+                      <span className="tech-tag">JWT</span>
+                      <span className="tech-tag">Swagger</span>
+                    </div>
+                    <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      {/* Botón Front */}
+                      <a href="https://github.com/Eleil24/Proyect_movie_crud" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Front
+                      </a>
+                      {/* Botón Back */}
+                      <a href="https://github.com/eleil-uchpa/Peliculas_Backend_Up" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Back
+                      </a>
+                      {/* Botón API (Render) */}
+                      <a href="https://peliculas-backend-up.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Monitor size={16} /> API Server
+                      </a>
+                      {/* Botón Visitar */}
+                      <a href="https://proyect-movie-crud.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                        <ExternalLink size={16} /> Visitar
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Project 2 */}
-              <div className="project-card glass fade-up delay-2">
-                <div className="project-img-wrapper">
-                  <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #0f172a, #38bdf8)', opacity: 0.8 }}></div>
-                </div>
-                <div className="project-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}>Sistema de Gestión</h3>
-                  <p>Dashboard administrativo para control de inventario y gestión de usuarios con roles.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">React</span>
-                    <span className="tech-tag">Node.js</span>
-                    <span className="tech-tag">Prisma</span>
+                {/* Project 2 */}
+                <div className="project-card glass fade-up delay-2">
+                  <div className="project-img-wrapper">
+                    <img src="/Portafolio_Eleil/projects/gestor_de_stock.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem' }}>
-                    <a href="#" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
-                      <Github size={16} /> Código
-                    </a>
+                  <div className="project-content">
+                    <h3 style={{ marginBottom: '0.5rem' }}>Gestión de Stock</h3>
+                    <p>Dashboard administrativo para control de inventario y gestión de productos. Incluye módulos para registrar compras, gestión dinámica de carrito de productos, administración de proveedores y control de stock. Arquitectura segura con autenticación basada en roles y manejo eficiente de base de datos relacional.</p>
+                    <div className="project-tech">
+                      <span className="tech-tag">React</span>
+                      <span className="tech-tag">TypeScript</span>
+                      <span className="tech-tag">Vite</span>
+                      <span className="tech-tag">Node.js</span>
+                      <span className="tech-tag">Prisma ORM</span>
+                      <span className="tech-tag">PostgreSQL</span>
+                      <span className="tech-tag">JWT</span>
+                      <span className="tech-tag">NestJS</span>
+                    </div>
+                    <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <a href="https://github.com/Eleil24/Control_stock_frontend_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Front
+                      </a>
+                      <a href="https://github.com/eleil-um-98/Gestion_de_Stock_Render" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Back
+                      </a>
+                      <a href="https://gestion-de-stock-render.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Monitor size={16} /> API Server
+                      </a>
+                      <a href="https://control-stock-frontend-levantar.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                        <ExternalLink size={16} /> Visitar
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Project 3 */}
-              <div className="project-card glass fade-up delay-2">
-                <div className="project-img-wrapper">
-                  <img src="/Portafolio_Eleil/gestor_de_tareas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div className="project-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Tareas</h3>
-                  <p>Aplicación de productividad con el fin de gestionar tareas diarias.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">React</span>
-                    <span className="tech-tag">Vite</span>
-                    <span className="tech-tag">Spring Boot</span>
-                    <span className="tech-tag">PostgreSQL</span>
-                    <span className="tech-tag">Tailwind</span>
+                {/* Project 3 */}
+                <div className="project-card glass fade-up delay-2">
+                  <div className="project-img-wrapper">
+                    <img src="/Portafolio_Eleil/projects/gestor_de_tareas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    {/* Botón Front */}
-                    <a href="https://github.com/Eleil24/Gestor_de_Tareas_Front_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Github size={16} /> Front
-                    </a>
-                    {/* Botón Back */}
-                    <a href="https://github.com/Eleil24/gestor-tareas-backend_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Github size={16} /> Back
-                    </a>
-                    {/* Botón API (Render) */}
-                    <a href="https://gestor-tareas-backend-levantar.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Monitor size={16} /> API Server
-                    </a>
-                    {/* Botón Visitar */}
-                    <a href="https://gestor-de-tareas-front-levantar.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
-                      <ExternalLink size={16} /> Visitar
-                    </a>
+                  <div className="project-content">
+                    <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Tareas</h3>
+                    <p>Aplicación web Full Stack orientada a la productividad y organización personal. Permite a los usuarios crear, clasificar, editar y gestionar el ciclo de vida de sus tareas diarias. Cuenta con una interfaz intuitiva y responsiva desarrollada con React y Tailwind CSS, respaldada por una API RESTful robusta construida con Spring Boot y PostgreSQL para asegurar la persistencia de datos.</p>
+                    <div className="project-tech">
+                      <span className="tech-tag">React</span>
+                      <span className="tech-tag">Vite</span>
+                      <span className="tech-tag">Spring Boot</span>
+                      <span className="tech-tag">PostgreSQL</span>
+                      <span className="tech-tag">Tailwind</span>
+                    </div>
+                    <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      {/* Botón Front */}
+                      <a href="https://github.com/Eleil24/Gestor_de_Tareas_Front_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Front
+                      </a>
+                      {/* Botón Back */}
+                      <a href="https://github.com/Eleil24/gestor-tareas-backend_levantar" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Back
+                      </a>
+                      {/* Botón API (Render) */}
+                      <a href="https://gestor-tareas-backend-levantar.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Monitor size={16} /> API Server
+                      </a>
+                      {/* Botón Visitar */}
+                      <a href="https://gestor-de-tareas-front-levantar.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                        <ExternalLink size={16} /> Visitar
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Project 4 */}
-              <div className="project-card glass fade-up delay-2">
-                <div className="project-img-wrapper">
-                  <img src="/Portafolio_Eleil/gestor_de_comandas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div className="project-content">
-                  <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Comandas</h3>
-                  <p>Aplicación de gestión de comandas para restaurantes.</p>
-                  <div className="project-tech">
-                    <span className="tech-tag">React</span>
-                    <span className="tech-tag">Bootstrap</span>
-                    <span className="tech-tag">Moockito</span>
+                {/* Project 4 */}
+                <div className="project-card glass fade-up delay-2">
+                  <div className="project-img-wrapper">
+                    <img src="/Portafolio_Eleil/projects/gestor_de_comandas.JPG" alt="App de Tareas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    <a href="https://github.com/Eleil24/Sistema-de-comandas" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
-                      <Github size={16} /> Código
-                    </a>
-                    <a href="https://eleil24.github.io/Sistema-de-comandas/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
-                      <ExternalLink size={16} /> Visitar
-                    </a>
+                  <div className="project-content">
+                    <h3 style={{ marginBottom: '0.5rem' }}>Gestor de Comandas</h3>
+                    <p>Sistema diseñado para optimizar el flujo de pedidos en restaurantes, facilitando la toma y seguimiento de comandas en tiempo real. Interfaz ágil construida con React y Bootstrap, utilizando Mockito para simular y proveer los datos de la carta y platos (Mock Data), emulando el comportamiento de una base de datos real.</p>
+                    <div className="project-tech">
+                      <span className="tech-tag">React</span>
+                      <span className="tech-tag">Bootstrap</span>
+                      <span className="tech-tag">Mockito</span>
+                    </div>
+                    <div style={{ marginTop: '1.5rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                      <a href="https://github.com/Eleil24/Sistema-de-comandas" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem' }}>
+                        <Github size={16} /> Código
+                      </a>
+                      <a href="https://eleil24.github.io/Sistema-de-comandas/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', marginLeft: 'auto' }}>
+                        <ExternalLink size={16} /> Visitar
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

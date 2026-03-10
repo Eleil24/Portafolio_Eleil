@@ -143,6 +143,17 @@ section {
   transform: translateY(-2px);
 }
 
+/* --- Proyectos Destacados --- */
+.projects-section {
+  position: relative;
+  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('/images/computadora_3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem 0 2rem 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
 /* Cards */
 .project-grid {
   display: flex;
@@ -244,7 +255,8 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.15rem 0;
+  /* Eliminado el padding vertical */
   z-index: 100;
   transition: all 0.3s ease;
 }
@@ -253,7 +265,8 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1.5rem;
+  padding: 0.15rem 1.5rem;
+  /* El padding vertical al mínimo */
   border-radius: 9999px;
 }
 
@@ -264,12 +277,12 @@ section {
 }
 
 .nav-profile-img {
-  width: 45px;
-  height: 45px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: var(--glass-border);
-  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop');
-  /* Mismo placeholder temporal */
+  background-image: url('/images/imagen_eleil.jpg');
+  /* La foto que me indicaste */
   background-size: cover;
   background-position: center;
   border: 2px solid transparent;
@@ -329,8 +342,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 0;
-  /* El usuario puede cambiar esta URL de imagen de fondo (fondos abstractos oscuros) */
-  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+  background-image: url('/Portafolio_Eleil/images/computadora_inicio.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -348,6 +360,7 @@ section {
 
 .about-section {
   padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .about-grid {
@@ -370,7 +383,7 @@ section {
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   /* Imagen de ejemplo para el perfil (se recomienda una foto profesional) */
-  background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop');
+  background-image: url('/Portafolio_Eleil/images/foto_sobremi.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -406,10 +419,23 @@ section {
 
 /* --- Conocimientos --- */
 .skills-section {
-  padding-top: 2rem;
+  position: relative;
+  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('/images/computadora_2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.skills-section h2 {
+  position: relative;
+  z-index: 1;
 }
 
 .skills-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -479,7 +505,8 @@ section {
 /* --- Experiencia --- */
 .experience-section {
   position: relative;
-  padding: 2rem 0 6rem 0;
+  padding: 2rem 0 4rem 0;
+  /* Padding inferior achicado de 6rem a 2rem */
   /* Fondo estilo paisaje o degradado cálido, como en el ejemplo */
   background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop');
   background-size: cover;
