@@ -4,6 +4,12 @@ import { Github, Linkedin, Mail, ExternalLink, ChevronDown, User, Monitor, Smart
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
   const projectsRef = useRef(null);
 
   useEffect(() => {
@@ -25,18 +31,59 @@ function App() {
     <>
       <div className="bg-animation"></div>
 
+      {/* Lightbox de foto */}
+      {isLightboxOpen && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button
+              className="lightbox-close"
+              onClick={() => setIsLightboxOpen(false)}
+              aria-label="Cerrar"
+            >
+              <X size={24} />
+            </button>
+            <img
+              src="/Portafolio_Eleil/images/imagen_eleil.jpg"
+              alt="Eleil Uchpa Mayuntupa"
+              className="lightbox-img"
+            />
+            <p className="lightbox-caption">Eleil Uchpa Mayuntupa &mdash; Full Stack Developer</p>
+          </div>
+        </div>
+      )}
+
+      {/* Overlay móvil */}
+      <div
+        className={`mobile-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
       {/* Navbar */}
       <nav className={`navbar ${scrolled ? 'glass' : ''}`}>
         <div className="container nav-container">
-          <a href="#" className="nav-logo" title="Inicio">
+          <a
+            href="#"
+            className="nav-logo"
+            title="Ver foto"
+            onClick={e => { e.preventDefault(); setIsLightboxOpen(true); }}
+          >
             <div className="nav-profile-img"></div>
           </a>
-          
+
           <button className="menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
 
           <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+            {/* Header del panel */}
+            <div className="mobile-menu-header">
+              <span className="mobile-menu-name">Eleil Uchpa Mayuntupa</span>
+              <span className="mobile-menu-role">Full Stack Developer</span>
+            </div>
+
             <a href="#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Inicio</a>
             <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Sobre mí</a>
             <a href="#skills" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Conocimientos</a>
