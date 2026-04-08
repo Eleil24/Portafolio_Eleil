@@ -524,8 +524,14 @@ function App() {
                 href="https://wa.me/51927712406?text=Hola%20Eleil,%20vi%20tu%20portafolio..."
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary"
-                style={{ padding: '1rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}
+                className="btn btn-whatsapp"
+                style={{ 
+                  padding: '1rem 2.5rem', 
+                  fontSize: '1.2rem', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.8rem'
+                }}
               >
                 <Smartphone size={24} /> Contactar por WhatsApp
               </a>
