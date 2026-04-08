@@ -519,9 +519,21 @@ function App() {
             <p style={{ marginBottom: '2rem' }}>
               Actualmente estoy abierto a nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres saludar, mi bandeja de entrada siempre está abierta.
             </p>
-            <a href="mailto:eleil_uchpam@outlook.es" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
-              <Mail size={20} /> Enviar Mensaje
-            </a>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <a
+                href="https://wa.me/51927712406?text=Hola%20Eleil,%20vi%20tu%20portafolio..."
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+                style={{ padding: '1rem 2.5rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}
+              >
+                <Smartphone size={24} /> Contactar por WhatsApp
+              </a>
+            </div>
+
+            <p style={{ marginTop: '1.5rem', fontSize: '1rem', opacity: 0.8 }}>
+               O si prefieres, escríbeme a: <span style={{ color: 'var(--accent)' }}>eleil_uchpam@outlook.es</span>
+            </p>
 
             <div style={{ marginTop: '3rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
               <a href="https://github.com/Eleil24" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-primary)'} onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
