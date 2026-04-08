@@ -156,7 +156,7 @@ function App() {
                 <div className="info-item">
                   <Mail className="info-icon" />
                   <div>
-                    <strong style={{ display: 'block' }}>Correo:</strong> <span style={{ color: 'var(--text-secondary)' }}>eleil.uchpam@gmail.com</span>
+                    <strong style={{ display: 'block' }}>Correo:</strong> <span style={{ color: 'var(--text-secondary)' }}>eleil_uchpam@outlook.es</span>
                   </div>
                 </div>
                 <div className="info-item">
@@ -519,7 +519,7 @@ function App() {
             <p style={{ marginBottom: '2rem' }}>
               Actualmente estoy abierto a nuevas oportunidades. Si tienes un proyecto en mente o simplemente quieres saludar, mi bandeja de entrada siempre está abierta.
             </p>
-            <a href="mailto:eleil.uchpam@gmail.com" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
+            <a href="mailto:eleil_uchpam@outlook.es" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}>
               <Mail size={20} /> Enviar Mensaje
             </a>
 
